@@ -103,3 +103,5 @@ ENV/
 # IDE
 .idea/
 
+# dependencies
+/main_service/gui/node_modules

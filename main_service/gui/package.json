@@ -1,0 +1,28 @@
+{
+  "name": "mediator-main-service-gui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "author": "Dmytro Kolesnyk",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "black-dashboard": "^1.0.0",
+    "bootstrap": "^4.1.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "^2.0.5"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
