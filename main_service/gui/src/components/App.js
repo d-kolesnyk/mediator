@@ -1,23 +1,55 @@
 import React, { Component } from 'react';
-import 'black-dashboard/assets/css/black-dashboard.css'
+import { Router, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import "bootstrap/dist/css/bootstrap.css"
+import '../css/app.css';
+
+import { LoginPage } from "./LoginPage";
+import HomePage from "./HomePage";
+
+import { history } from '../helpers';
+import { alertActions } from '../actions'
+
+export const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={props => (
+        localStorage.getItem('user')
+            ? <Component {...props} />
+            : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+    )} />
+)
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        const { dispatch } = this.props;
+        history.listen((location, action) => {
+            // clear alert on location change
+            // dispatch(alertActions.clear());
+        });
+    }
+
   render() {
+    const { alert } = this.props;
     return (
-        <div className="wrapper ">
-            <div data-color="blue" className="sidebar"></div>
-            <div className='main-panel'>
-                <nav data-color="blue" className="navbar navbar-expand-lg navbar-absolute navbar-transparent"></nav>
-<               div className="content">
-                    <div className="card" style={{width: '50%'}}>
-                        <div className="card-body">
-                        </div>
-                    </div>
+            <Router history={history}>
+                <div>
+                    <PrivateRoute exact path="/" component={HomePage} />
+                    <Route path="/login" component={LoginPage} />
                 </div>
-            </div>
-        </div>
+            </Router> 
     );
   }
 }
 
-export default App;
+// export default App;
+
+function mapStateToProps(state) {
+    const { alert } = state;
+    return {
+        alert
+    };
+}
+
+const connectedApp = connect(null, mapStateToProps)(App);
+export { connectedApp as App }; 

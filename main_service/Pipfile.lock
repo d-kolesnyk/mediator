@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "835cfe8bc7e4422252af5e52e4541e482e57a401e769a23411d97d3a89c6b28c"
+            "sha256": "63de9fcfdb43d910406f26363d8a1eceea83864d1acd41ced453c559d8e98c00"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -99,6 +99,13 @@
             "index": "pypi",
             "version": "==1.0.2"
         },
+        "flask-jwt-extended": {
+            "hashes": [
+                "sha256:48e54a96410e10c456f1a0f1bde7187f88db658ca64e41d548ed4e91251d1f83"
+            ],
+            "index": "pypi",
+            "version": "==3.13.1"
+        },
         "gunicorn": {
             "hashes": [
                 "sha256:aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471",
@@ -138,6 +145,13 @@
                 "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
             ],
             "version": "==2.19"
+        },
+        "pyjwt": {
+            "hashes": [
+                "sha256:30b1380ff43b55441283cc2b2676b755cca45693ae3097325dea01f3d110628c",
+                "sha256:4ee413b357d53fd3fb44704577afac88e72e878716116270d722723d65b42176"
+            ],
+            "version": "==1.6.4"
         },
         "pyopenssl": {
             "hashes": [
