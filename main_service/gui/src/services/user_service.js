@@ -1,10 +1,21 @@
 import { authHeader } from '../helpers';
 
 export const userService = {
+    add_new_user,
     login,
     logout,
     getAll
 };
+
+function add_new_user(username, password, system_box_code) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, system_box_code })
+    };
+
+    return fetch(`/users/add_new`, requestOptions);
+}
 
 function login(username, password) {
     const requestOptions = {
@@ -17,9 +28,7 @@ function login(username, password) {
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
-            console.log(user)
             if (user.data.token) {
-                console.log("GOOD")
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user.data));
             }

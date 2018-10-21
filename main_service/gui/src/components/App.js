@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import '../css/app.css';
 
 import { LoginPage } from "./LoginPage";
+import { AddUserPage } from "./AddUserPage";
 import HomePage from "./HomePage";
 
 import { history } from '../helpers';
@@ -36,6 +37,7 @@ class App extends Component {
                 <div>
                     <PrivateRoute exact path="/" component={HomePage} />
                     <Route path="/login" component={LoginPage} />
+                    <Route path="/add_user" component={AddUserPage} />
                 </div>
             </Router> 
     );

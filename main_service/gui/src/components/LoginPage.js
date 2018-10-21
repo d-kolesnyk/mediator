@@ -45,19 +45,32 @@ class LoginPage extends Component {
       return (
         <div className="wrapper ">
             <div className="login-main-panel">
-                <div className="center-content">
+                <div className="card center-content">
+                    <div className="card-header">
+                    Login
+                    </div>
                     <form name="form" onSubmit={this.handleSubmit}>
+                        <div className="card-body">
+                            {/* <label htmlFor="username">Username</label> */}
+                            <input placeholder="Username" type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
+
+                            {/* <label htmlFor="password">Password</label> */}
+                            <input placeholder="Password" type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
                     
-                    <label htmlFor="username">Username</label>
-                    <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
-
-
-                    <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
-
-                    <button className="btn btn-primary">Login</button>
-
+                        </div>
+                        <div className="card-footer">
+                            <div className="row">
+                                <div className="col-md-6 pr-md-1">
+                                    <button className="btn btn-primary">Login</button>
+                                </div>
+                                <div className="col-md-6 pl-md-1">
+                                    <button onClick={()=> {this.props.history.replace('/add_user')}} type="button" className="btn btn-link float-right align-middle">add user</button>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </form>
+                    
                 </div>
             </div>
         </div>

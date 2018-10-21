@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class HomePage extends Component {
     render() {
@@ -27,6 +28,7 @@ class HomePage extends Component {
                                   </div>
                               </div>
                           </div>
+                          <Link to="/login">Logout</Link>
                       </div>
                   </div>
                   <footer className="footer">mediator 2018</footer>

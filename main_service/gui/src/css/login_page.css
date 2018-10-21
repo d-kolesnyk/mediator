@@ -12,9 +12,62 @@
   }
 
   .center-content {
-      color: white;
+    width: 30rem;
     position: absolute;
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
     }
+
+    .form-control {
+      border-color: #2b3553;
+      border-radius: .4285rem;
+      transition: color .3s ease-in-out,border-color .3s ease-in-out,background-color .3s ease-in-out;
+      background-color: transparent;
+      font-size: .75rem;
+    }
+
+    .form-control:focus {
+      border-color: #1d8cf8;
+      background: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: 0 !important;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .card form .form-control {
+      margin-bottom: 20px;
+  }
+
+  .btn-danger {
+    box-shadow: none;
+    color: #fff;
+    border-radius: .4285rem;
+    font-size: .875rem;
+    padding: 11px 40px;
+    border: 1px solid transparent;
+    font-weight: 600;
+  }
+    .btn-primary {
+      background: #1d8cf8;
+      background-image: linear-gradient(to bottom left,#4c91d4,#0f89ff,#4c95dc);
+      background-size: 210% 210%;
+      background-position: 100% 0;
+      background-color: #1d8cf8;
+      transition: all .15s ease;
+      box-shadow: none;
+      color: #fff;
+      border-radius: .4285rem;
+      font-size: .875rem;
+      padding: 11px 40px;
+      border: 1px solid transparent;
+      font-weight: 600;
+    }
+
+.card label {
+  font-size: .75rem;
+    margin-bottom: 5px;
+    color: hsla(0,0%,100%,.6);
+    display: inline-block;
+}

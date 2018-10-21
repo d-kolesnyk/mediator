@@ -4,10 +4,23 @@ import { alertActions } from './';
 import { history } from '../helpers';
 
 export const userActions = {
+    add_new_user,
     login,
     logout,
     getAll
 };
+
+function add_new_user(username, password, system_box_code) {
+    return dispatch => {
+        userService.add_new_user(username, password, system_box_code)
+            .then(
+                user => { 
+                    history.push('/');
+                },
+            );
+    };
+
+}
 
 function login(username, password) {
     return dispatch => {
