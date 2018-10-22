@@ -102,6 +102,7 @@ ENV/
 
 # IDE
 .idea/
+.vscode
 
 # dependencies
 /main_service/gui/node_modules
