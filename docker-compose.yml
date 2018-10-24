@@ -5,17 +5,17 @@ services:
     ports:
      - "80:5000"
     links:
-        - mongodb
+        - postgresdb
     depends_on:
-        - mongodb
-  mongodb:
-    image: mongo:2.7
-    container_name: "mongodb"
+        - postgresdb
+  postgresdb:
+    image: postgres:latest
+    container_name: "postgresdb"
     environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
+      - POSTGRES_DB=main
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=example
     volumes:
-      - ./data/db:/data/db
+      - ../data/postgresql_data:/var/lib/postgresql/data
     ports:
-      - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    - 5432:5432
