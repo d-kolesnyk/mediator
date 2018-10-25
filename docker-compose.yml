@@ -1,6 +1,7 @@
 version: '2'
 services:
   web:
+    restart: always
     build: ./main_service
     ports:
      - "80:5000"
@@ -10,6 +11,7 @@ services:
         - postgresdb
   postgresdb:
     image: postgres:latest
+    restart: always
     container_name: "postgresdb"
     environment:
       - POSTGRES_DB=main
